@@ -6,6 +6,9 @@
   --b5: #03045e;
   --b6: #433891;
   --white: #f5f7f6;
+  --wave1:#c4e5f7;
+  --wave2:#a6d1ea;
+  --wave3:#78b3d3;
   --normTransition: all 0.3s ease-in-out;
 }
 @font-face {
@@ -23,7 +26,49 @@ a {
   text-decoration: none;
 }
 /* payment */
+
+.firstWave{
+  background-color: var(--wave1);
+  clip-path: polygon(0% 0%, 93.7% 0%, 59.9% 100%, 0% 100%);
+  z-index: -1;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px ;
+  animation: firstWaveGo 1s 1 forwards,firstWaveGoing 10s ease-in-out 1.2S infinite forwards;
+  opacity: 0;
+
+}
+.secondWave{
+  background-color: var(--wave2);
+  clip-path: polygon(0% 0%, 93.7% 0%, 71.9% 100%, 0% 100%);
+  z-index: -2;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px ;
+  animation: SecondWaveGo 1s ease .8s 1 forwards,secondWaveGoing 10s 2s ease-in-out infinite forwards;
+  opacity: 0;
+
+}
+.thirdWave{
+  background-color: var(--wave3);
+  clip-path: polygon(0% 0%, 93.7% 0%, 76.9% 100%, 0% 100%);
+  z-index: -3;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px ;
+  animation: thirdWaveGo 1s ease 1.3s 1 forwards,thirdWaveGoing 10s ease-in-out 3.3s infinite forwards;
+  opacity: 0;
+
+}
+
 .paymentModule {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,6 +80,7 @@ a {
   margin: 10px;
   transition: var(--normTransition);
   animation: goUpBorder 1s 1 forwards;
+  overflow: hidden;
 }
 .paymentModule:hover {
   transform: scale(1.02);
@@ -91,6 +137,9 @@ a {
 }
 
 /* features */
+.featureGoUp{
+  visibility: visible;;
+}
 .featureTitle {
   position: absolute;
   top: 19%;
@@ -207,6 +256,7 @@ a {
   align-items: center;
   justify-content: center;
 }
+
 .featureStore .addedFeature {
   background: url(./assets/images/pattern.png);
   background-size: 500%;
@@ -256,5 +306,86 @@ a {
   }
   100% {
     border-color: var(--b2);
+  }
+}
+@keyframes firstWaveGo {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 28%;
+    opacity: 1;
+  }
+}
+@keyframes SecondWaveGo {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 46%;
+  }
+}
+@keyframes thirdWaveGo {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 64%;
+    opacity: 1;
+  }
+}
+@keyframes firstWaveGoing {
+  0% {
+    width: 28%;
+    box-shadow: 0 0 0 black;
+
+  }
+  50% {
+    width: 29%;
+    box-shadow: 0 0 15px black;
+
+  }
+  100% {
+    width: 28%;
+    box-shadow: 0 0 0 black;
+
+  }
+}
+@keyframes secondWaveGoing {
+  0% {
+    width: 46%;
+    box-shadow: 0 0 0 black;
+
+  }
+  50% {
+    width: 47%;
+    box-shadow: 0 0 15px black;
+
+  }
+  100% {
+    width: 46%;
+    box-shadow: 0 0 0 black;
+
+  }
+}
+@keyframes thirdWaveGoing {
+  0% {
+    width: 64%;
+    box-shadow: 0 0 0 black;
+
+  }
+  50% {
+    width: 63%;
+    box-shadow: 5px 5px 55px black;
+
+  }
+  100% {
+    width: 64%;
+    box-shadow: 0 0 0 black;
+
   }
 }

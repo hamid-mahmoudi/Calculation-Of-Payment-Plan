@@ -11,6 +11,7 @@ const PaymentModule = ({ name, wage, id, totalFeature }) => {
 
   return (
     <div className="paymentModule">
+
       <input type="radio" name="check" />
       <div className="modTitle">
         <h5 className="m-0">{name}</h5>
@@ -26,8 +27,11 @@ const PaymentModule = ({ name, wage, id, totalFeature }) => {
       </div>
       <div className="modCost">
         <span>هر قسط</span>
-        <span>{roundUp(monthlyPay, -3).toLocaleString()}</span>
+        <span>{roundUp(monthlyPay, -3).toLocaleString()} </span>
       </div>
+      <span className="firstWave " />
+      <span className="secondWave " />
+      <span className="thirdWave " />
     </div>
   );
 };

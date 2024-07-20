@@ -15,7 +15,7 @@ const Payment = () => {
       totalFeature += features[i].cost;
     }
   }
-
+ 
   console.log(totalFeature);
   return (
     <div className="">
@@ -25,8 +25,8 @@ const Payment = () => {
           {selectedFeatures.map((featureId) => {
             const feature = features.find((f) => f.id === featureId);
             return (
-              <div className="addedFeature" key={featureId}>
-                {feature ? feature.name : "Feature not found"}
+              <div className={`addedFeature`}  key={featureId}>
+                <div>{feature.name}</div>
               </div>
             );
           })}
